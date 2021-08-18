@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class MibInterfaceRecord {
 
     String index;
@@ -78,6 +80,19 @@ public class MibInterfaceRecord {
                 ", outQLen = " + "\""+outQLen + "\""+' ' +
                 ", specific = " + "\""+specific+"\""
                 ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MibInterfaceRecord)) return false;
+        MibInterfaceRecord that = (MibInterfaceRecord) o;
+        return Objects.equals(index, that.index) && Objects.equals(description, that.description) && Objects.equals(type, that.type) && Objects.equals(mtu, that.mtu) && Objects.equals(speed, that.speed) && Objects.equals(physicAddress, that.physicAddress) && Objects.equals(adminStatus, that.adminStatus) && Objects.equals(operStatus, that.operStatus) && Objects.equals(lastChange, that.lastChange) && Objects.equals(inOctets, that.inOctets) && Objects.equals(inUcastPkts, that.inUcastPkts) && Objects.equals(inNUcastPkts, that.inNUcastPkts) && Objects.equals(inDiscards, that.inDiscards) && Objects.equals(inErrors, that.inErrors) && Objects.equals(inUnknownProtos, that.inUnknownProtos) && Objects.equals(outOctets, that.outOctets) && Objects.equals(outUcastPkts, that.outUcastPkts) && Objects.equals(outNUcastPkts, that.outNUcastPkts) && Objects.equals(outDiscard, that.outDiscard) && Objects.equals(outErrors, that.outErrors) && Objects.equals(outQLen, that.outQLen) && Objects.equals(specific, that.specific);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(index, description, type, mtu, speed, physicAddress, adminStatus, operStatus, lastChange, inOctets, inUcastPkts, inNUcastPkts, inDiscards, inErrors, inUnknownProtos, outOctets, outUcastPkts, outNUcastPkts, outDiscard, outErrors, outQLen, specific);
     }
 
     public void setDescription(String description) {

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tecomsnmp4j" />
+        <module name="tecom-test-java" />
       </profile>
     </annotationProcessing>
   </component>
